@@ -5,5 +5,11 @@ function store() {
   localStorage.setItem("userInput", input.value);
   // saving initial count
   let count = 0;
-  localStorgage.setItem("count", count);
+  localStorage.setItem("count", count);
+}
+
+function breakThing() {
+  count = parseInt(localStorage.count);
+  count = count + 1;
+  localStorage.setItem("count", count);
 }
