@@ -7,16 +7,17 @@ function store() {
   let count = 0;
   localStorage.setItem("count", count);
 }
-function storeText() {
-  const texts = [];
-  // get user input
-  textin = document.getElementById("textInput").value;
-  texts.forEach((element) => {
-    texts.push(element);
-  });
+let inputs = [];
 
-  // save user input
-  localStorage.setItem("textInputs", JSON.stringify(texts));
+function storeText() {
+  let textInputValue = document.getElementById("textInput").value;
+  inputs.push(textInputValue);
+  localStorage.setItem("textInputs", JSON.stringify(inputs));
+}
+
+let storedInputs = localStorage.getItem("textInputs");
+if (storedInputs !== null) {
+  inputs = JSON.parse(storedInputs);
 }
 
 function breakThing() {
