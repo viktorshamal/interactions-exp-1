@@ -16,6 +16,10 @@
         <ul>
         </ul>
     </div>
+    <div>
+        <p>You want to destroy another object?</p>
+        <button onclick="clearStorage()">Clear</button>
+    </div>
     <script>
         const ul = document.getElementById("listInputs")
         const textInputs = JSON.parse(localStorage.getItem('textInputs'));
@@ -24,6 +28,10 @@
           li.textContent = element;
           ul.appendChild(li);
         });
+        function clearStorage(){
+            localStorage.clear();
+            location.href = "./index.html";
+        }
     </script>
 </body>
 </html>
