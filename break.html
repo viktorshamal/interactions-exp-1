@@ -8,28 +8,29 @@
     <script src="localStorage.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="style.css"></link>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <h1>Look at your <span ls-value="userInput">vase</span> and what you did to it</h1>
-    </div>        
-    <img class="img0" id="img0" src="https://via.placeholder.com/300" onclick="breakThing()"/>
-        <img class="img1" id="img1" src="./images/vase crack 1.png" onclick="breakThing()"/>
-        <img class="img2" id="img2" src="./images/vase crack 2.png" onclick="breakThing()"/>
-        <img class="img3" id="img3" src="./images/vase crack 3.png" onclick="breakThing()"/>
-        <img class="img4" id="img4" src="./images/vase crack 4.png" onclick="breakThing()"/>
-        <img class="img5" id="img5" src="./images/vase crack 5.png" onclick="breakThing()"/>
-        <img class="img6" id="img6" src="./images/vase crack 6.png" onclick="breakThing()"/>
-
-
-      
-        <form class="input-form" id="input-form">
-        <label for="input">
-            <p>How did you contribute to break it?</p>
-          </label>
-          <input type="text" id="textInput" name="textInput" value="" /><br />
-          <br />
-          <input class="submit-button" type="submit" onclick="storeText(); breakThing()" value="Save" /><br /><br />
+<body class="flex flex-col items-center p-8">
+    <div class="flex flex-col gap-y-2 w-96">
+        <h1 class="text-2xl font-bold">Click on your <span ls-value="userInput">vase</span> then</h1>
+        <div class="flex flex-col items-center pl-10">
+            <img class="img0" id="img0" src="./images/vase-0.png" width="200px" onclick="breakThing()"/>
+            <img class="img1" id="img1" src="./images/vase-1.png" width="200px" onclick="breakThing()"/>
+            <img class="img2" id="img2" src="./images/vase-2.png" width="200px" onclick="breakThing()"/>
+            <img class="img3" id="img3" src="./images/vase-3.png" width="200px" onclick="breakThing()"/>
+            <img class="img4" id="img4" src="./images/vase-4.png" width="200px" onclick="breakThing()"/>
+            <img class="img5" id="img5" src="./images/vase-5.png" width="200px" onclick="breakThing()"/>
+            <div class="end-title" id="end-title">
+                <h1>RIP ITS BROKEN!!</h1>
+                <a href="./graveyard.html">
+                    <button >See memorial</button>
+                </a>
+            </div> 
+        </div>
+        <form class="input-form flex flex-col gap-y-2" id="input-form">
+            <label for="input" class="text-lg font-bold">How did you contribute to break it?</label>
+            <input class="border w-full peer h-16" type="text" id="textInput" name="textInput" value="" required/>
+            <input class="submit-button w-2/3 h-10 bg-black text-white self-center peer-invalid:bg-gray-300" type="submit" onclick="storeText()" value="Save" />
         </form>
         <div class="end-title" id="end-title">
             <h1>RIP ITS BROKEN!!</h1>
@@ -42,6 +43,7 @@
         </div>        
 
     </div>
+
     <script>
     checkCount();
     document.querySelectorAll('[ls-value]').forEach(e => e.innerText = localStorage.getItem(e.getAttribute('ls-value')));

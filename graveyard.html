@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"></link>
     <script src="localStorage.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body>
-    <div class="container">
-        <h1>R.I.P <span ls-value="userInput">vase</span></h1>
-    </div>    
-    <div id="listInputs">
-        <ul>
-        </ul>
+<body class="flex flex-col items-center p-8">
+    <div class="flex flex-col gap-y-2 w-96">
+        <h1 class="text-4xl font-bold">R.I.P <span ls-value="userInput">vase</span></h1>
+        <div id="listInputs">
+            <ul>
+            </ul>
+        </div>
+        <p class="text-lg font-bold">You want to destroy another object?</p>
+        <button class="submit-button w-2/3 h-10 bg-black text-white self-center peer-invalid:bg-gray-300" onclick="clearStorage()">Clear</button>
     </div>
-    <div>
-        <p>You want to destroy another object?</p>
-        <button onclick="clearStorage()">Clear</button>
-    </div>
+
     <script>
         document.querySelectorAll('[ls-value]').forEach(e => e.innerText = localStorage.getItem(e.getAttribute('ls-value')));
         const ul = document.getElementById("listInputs")
