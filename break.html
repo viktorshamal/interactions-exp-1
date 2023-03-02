@@ -13,13 +13,14 @@
     <div class="container">
         <h1>Look at your <span ls-value="userInput">vase</span> and what you did to it</h1>
     </div>        
-    <img class="img0" id="img0" src="./images/normal vase.png" width="200px" onclick="breakThing()"/>
-        <img class="img1" id="img1" src="./images/vase crack 1.png" width="200px" onclick="breakThing()"/>
-        <img class="img2" id="img2" src="./images/vase crack 2.png" width="200px" onclick="breakThing()"/>
-        <img class="img3" id="img3" src="./images/vase crack 3.png" width="200px" onclick="breakThing()"/>
-        <img class="img4" id="img4" src="./images/vase crack 4.png" width="200px" onclick="breakThing()"/>
-        <img class="img5" id="img5" src="./images/vase crack 5.png" width="200px" onclick="breakThing()"/>
-        <img class="img5" id="img5" src="./images/vase crack 6.png" width="200px" onclick="breakThing()"/>
+    <img class="img0" id="img0" src="https://via.placeholder.com/300" onclick="breakThing()"/>
+        <img class="img1" id="img1" src="./images/vase crack 1.png" onclick="breakThing()"/>
+        <img class="img2" id="img2" src="./images/vase crack 2.png" onclick="breakThing()"/>
+        <img class="img3" id="img3" src="./images/vase crack 3.png" onclick="breakThing()"/>
+        <img class="img4" id="img4" src="./images/vase crack 4.png" onclick="breakThing()"/>
+        <img class="img5" id="img5" src="./images/vase crack 5.png" onclick="breakThing()"/>
+        <img class="img6" id="img6" src="./images/vase crack 6.png" onclick="breakThing()"/>
+
 
       
         <form class="input-form" id="input-form">
@@ -28,10 +29,13 @@
           </label>
           <input type="text" id="textInput" name="textInput" value="" /><br />
           <br />
-          <input class="submit-button" type="submit" onclick="storeText()" value="Save" /><br /><br />
+          <input class="submit-button" type="submit" onclick="storeText(); breakThing()" value="Save" /><br /><br />
         </form>
         <div class="end-title" id="end-title">
             <h1>RIP ITS BROKEN!!</h1>
+            <div>
+                <img src="https://via.placeholder.com/300"/> <br>
+            </div>
             <a href="./graveyard.html">
                 <button >See memorial</button>
             </a>
