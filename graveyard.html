@@ -21,6 +21,7 @@
         <button onclick="clearStorage()">Clear</button>
     </div>
     <script>
+        document.querySelectorAll('[ls-value]').forEach(e => e.innerText = localStorage.getItem(e.getAttribute('ls-value')));
         const ul = document.getElementById("listInputs")
         const textInputs = JSON.parse(localStorage.getItem('textInputs'));
         textInputs.forEach(element => {
