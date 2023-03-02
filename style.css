@@ -1,12 +1,3 @@
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container {
-    max-width: 300px;
-}
 
 /* hiding photos from start */
 .img1{

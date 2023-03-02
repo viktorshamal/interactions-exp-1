@@ -8,20 +8,22 @@
     <script src="localStorage.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="style.css"></link>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <h1>Look at your <span ls-value="userInput">vase</span> and what you did to it</h1>
-    </div>        
-    <img class="img0" id="img0" src="https://via.placeholder.com/300" onclick="breakThing()"/>
+<body class="flex flex-col items-center p-8">
+    <div class="flex flex-col gap-y-2 w-96">
+        <h1 class="text-4xl">Click on your <span ls-value="userInput">vase</span> then</h1>     
+
+        <img class="img0" id="img0" src="https://via.placeholder.com/300" onclick="breakThing()"/>
         <img class="img1" id="img1" src="https://via.placeholder.com/150" onclick="breakThing()"/>
         <img class="img2" id="img2" src="https://via.placeholder.com/400" onclick="breakThing()"/>
         <img class="img3" id="img3" src="https://via.placeholder.com/300" onclick="breakThing()"/>
         <img class="img4" id="img4" src="https://via.placeholder.com/150" onclick="breakThing()"/>
         <img class="img5" id="img5" src="https://via.placeholder.com/400" onclick="breakThing()"/>
-        <h1 class="end-title" id="end-title">RIP ITS BROKEN!!</h1>
 
+        <h1 class="end-title text-4xl" id="end-title">RIP ITS BROKEN!!</h1>
     </div>
+
     <script>
     checkCount();
     document.querySelectorAll('[ls-value]').forEach(e => e.innerText = localStorage.getItem(e.getAttribute('ls-value')));
