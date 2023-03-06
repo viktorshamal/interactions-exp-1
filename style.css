@@ -28,4 +28,10 @@
 .input-form{
     display: block;
 }
+.clear-div{
+    display: none;
+}
+.listInputs{
+    display: none;
+}
 

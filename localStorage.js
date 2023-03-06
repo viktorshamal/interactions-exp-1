@@ -84,19 +84,19 @@ function checkCount() {
       img5.style.display = "block";
       break;
 
-    case 6:
-      //hiding photo(s)
-      document.getElementById("img0").style.display = "none";
-      document.getElementById("img1").style.display = "none";
-      document.getElementById("img2").style.display = "none";
-      document.getElementById("img3").style.display = "none";
-      document.getElementById("img4").style.display = "none";
-      document.getElementById("img5").style.display = "none";
+    // case 6:
+    //   //hiding photo(s)
+    //   document.getElementById("img0").style.display = "none";
+    //   document.getElementById("img1").style.display = "none";
+    //   document.getElementById("img2").style.display = "none";
+    //   document.getElementById("img3").style.display = "none";
+    //   document.getElementById("img4").style.display = "none";
+    //   document.getElementById("img5").style.display = "none";
 
-      //show correct photo
-      let img6 = document.getElementById("img6");
-      img6.style.display = "block";
-      break;
+    //   //show correct photo
+    //   let img6 = document.getElementById("img6");
+    //   img6.style.display = "block";
+    //   break;
 
     default:
       //hiding photo(s)
@@ -106,9 +106,16 @@ function checkCount() {
       document.getElementById("img3").style.display = "none";
       document.getElementById("img4").style.display = "none";
       document.getElementById("img5").style.display = "none";
-      document.getElementById("img6").style.display = "none";
+      // document.getElementById("img6").style.display = "none";
       document.getElementById("input-form").style.display = "none";
+      document.getElementById("header-title").style.display = "none";
 
       document.getElementById("end-title").style.display = "block";
+      document.getElementById("clear-div").style.display = "block";
+      document.getElementById("listInputs").style.display = "block";
   }
+}
+function clearStorage() {
+  localStorage.clear();
+  location.href = "./index.html";
 }

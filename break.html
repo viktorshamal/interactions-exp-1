@@ -12,7 +12,7 @@
 </head>
 <body class="flex flex-col items-center p-8">
     <div class="flex flex-col gap-y-2 w-96">
-        <h1 class="text-2xl font-bold">Click on your <span ls-value="userInput">vase</span> then</h1>
+        <h1 class="text-2xl font-bold" id="header-title">Have you done damage to your <span ls-value="userInput">vase</span>?</h1>
         <div class="flex flex-col items-center pl-10">
             <img class="img0" id="img0" src="./images/vase-0.png" width="200px" onclick="breakThing()"/>
             <img class="img1" id="img1" src="./images/vase-1.png" width="200px" onclick="breakThing()"/>
@@ -20,18 +20,34 @@
             <img class="img3" id="img3" src="./images/vase-3.png" width="200px" onclick="breakThing()"/>
             <img class="img4" id="img4" src="./images/vase-4.png" width="200px" onclick="breakThing()"/>
             <img class="img5" id="img5" src="./images/vase-5.png" width="200px" onclick="breakThing()"/>
+            
             <div class="end-title" id="end-title">
-                <h1>RIP ITS BROKEN!!</h1>
-                <a href="./graveyard.html">
-                    <button >See memorial</button>
-                </a>
+                <p class="text-lg font-bold">The damage you have done</p>
+                <img src="./images/bunke.png" >
+                <!-- <a href="./graveyard.html">
+                    <button class="submit-button w-2/3 h-10 bg-black text-white self-center peer-invalid:bg-gray-300" >See memorial</button>
+                </a> -->
             </div> 
+            <div id="listInputs" class="listInputs"> 
+                <ul>
+                </ul>
+            </div>
+            <div class="clear-div" id="clear-div">
+                <p class="text-lg font-bold">You want to break another object?</p>
+                <button class="submit-button w-2/3 h-10 bg-black text-white self-center peer-invalid:bg-gray-300" onclick="clearStorage()">Clear</button>
+            </div>
+           
         </div>
+        </div>
+        <div>
         <form class="input-form flex flex-col gap-y-2" id="input-form">
             <label for="input" class="text-lg font-bold">How did you contribute to break it?</label>
             <input class="border w-full peer h-16" type="text" id="textInput" name="textInput" value="" required/>
-            <input class="submit-button w-2/3 h-10 bg-black text-white self-center peer-invalid:bg-gray-300" type="submit" onclick="storeText()" value="Save" />
+            <input class="submit-button w-2/3 h-10 bg-black text-white self-center peer-invalid:bg-gray-300" type="submit" onclick="storeText(); breakThing()" value="Save" />
         </form>
+    </div>
+
+<!-- 
         <div class="end-title" id="end-title">
             <h1>RIP ITS BROKEN!!</h1>
             <div>
@@ -40,13 +56,21 @@
             <a href="./graveyard.html">
                 <button >See memorial</button>
             </a>
-        </div>        
+        </div>         -->
 
     </div>
 
     <script>
     checkCount();
     document.querySelectorAll('[ls-value]').forEach(e => e.innerText = localStorage.getItem(e.getAttribute('ls-value')));
+    document.querySelectorAll('[ls-value]').forEach(e => e.innerText = localStorage.getItem(e.getAttribute('ls-value')));
+        const ul = document.getElementById("listInputs")
+        const textInputs = JSON.parse(localStorage.getItem('textInputs'));
+        textInputs.forEach(element => {
+          const li = document.createElement('li');
+          li.textContent = element;
+          ul.appendChild(li);
+        });
     </script>
 </body>
 </html>
